@@ -9,6 +9,7 @@ Feature: Increment feature
     When I increment the variable by 1
     Then the variable should contain 2
 
+  @table
   Scenario Outline: Dynamic additions
     Given a variable set to <var>
     When I increment the variable by <increment>

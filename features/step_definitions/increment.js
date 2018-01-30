@@ -1,20 +1,21 @@
-const { defineSupportCode } = require('cucumber');
+const { Before, Given, Then, When } = require('cucumber');
 const { expect } = require('chai');
 
-defineSupportCode(({ Given, Then, When }) => {
-  Given('a variable set to {int}', function(number, callback) {
-    this.firstPredicate = number ? parseInt(number) : null;
-    callback();
-  });
+Before(function(opts) {
+  // console.info('before', opts)
+});
 
-  When('I increment the variable by {int}', function(number, callback) {
-    const secondPredicate = number ? parseInt(number) : null;
-    this.result = this.math.increment(this.firstPredicate, secondPredicate);
-    callback();
-  });
+Given('a variable set to {int}', function(number, callback) {
+  this.number1 = number;
+  callback();
+});
 
-  Then('the variable should contain {int}', function(number, callback) {
-    expect(this.result).to.eql(number);
-    callback();
-  });
+When('I increment the variable by {int}', function(number, callback) {
+  this.result = this.math.increment(this.number1, number);
+  callback();
+});
+
+Then('the variable should contain {int}', function(number, callback) {
+  expect(this.result).to.eql(number);
+  callback();
 });

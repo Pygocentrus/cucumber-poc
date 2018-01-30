@@ -5,6 +5,6 @@ Feature: Decrement feature
 
   @decrement
   Scenario: Simple decrement
-    Given a variable set to 3
+    Given a second variable set to 3
     When I decrement this variable by 2
-    Then the result should be 1
+    Then the result should equal 1
