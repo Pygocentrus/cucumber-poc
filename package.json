@@ -1,0 +1,13 @@
+{
+  "name": "cucumber",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "node_modules/.bin/cucumber-js"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "cucumber": "^4.0.0"
+  }
+}
